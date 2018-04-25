@@ -1,0 +1,17 @@
+import glob
+import os
+
+prefix_path = "C:/Users/mpotd/Documents/GitHub/Python-Sample-codes/Mayur_Python_code/file_Question/wx_data/"
+target_path = open('MissingPrcpData.txt', 'w')
+file_array = [f for f in os.listdir(prefix_path) if f.endswith('.txt')]
+file_array.sort()
+print(file_array)
+
+os.chdir("../wx_data")
+for file1 in glob.glob("*.txt"):
+     count = 0
+
+for f_obj in range(len(file_array)):
+     file = os.path.abspath(file_array[f_obj])
+     join_file = os.path.join(prefix_path, file)
+print(join_file)
